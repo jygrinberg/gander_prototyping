@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+    <title>Gander - Sign In</title>
+   <link href='http://fonts.googleapis.com/css?family=Lato|Courgette' rel='stylesheet' type='text/css'>
+    <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="../css/main.css" rel="stylesheet" type="text/css" />
+    <script src="../scripts/jquery-1.7.2.min.js"></script>
+  </head>
+
+  <body onload="onLoadFunctions()">
+
+  <div id='container'>
+      <header>
+        <a href="index.html">
+          <img id='logo' src="../images/Gander-logo-sm.png" border="0" alt="Gander Logo"></img>
+        </a>
+      </header>
+
+      <h2 id='slogan'>
+        <em>Fly</em> through email
+      </h2>
+
+      <div id='description'>
+        <p>
+          Gander is a secure, mobile-friendly
+          way to access and search your email.
+        </p>
+      </div>
+
+      <div id='waitlist'>
+          <form class="well">
+            <h3 class='form-section-header'>
+              Sign in
+            </h3>
+            <label id='log-in-email-label'>
+              What is your work email address?
+            </label>
+            <small id='email-helper-text' class='helper-text'>
+              Please enter your email address.
+            </small>
+            <input id='log-in-email-field' type="email" class="span3" placeholder="email@company.com"/>
+            <label id='log-in-password-label'>
+              Do you have a Gander account?
+            </label>
+            <small id='radio-helper-text' class='helper-text'>
+              Plese select one.
+            </small>
+            <input id='has-password-no' class="radio" type="radio" name="has-password" value="no" onclick="selectHasPasswordNo()" onfocus="selectHasPasswordNo()" />
+            <label id='has-password-label' for='has-password-no'>
+              No, I'm a new user.
+            </label>
+            <br/>
+            <input id='has-password-yes' class="radio" type="radio" name="has-password" value="yes" onclick="selectHasPasswordYes()" onfocus="selectHasPasswordYes()" CHECKED/>
+            <label id='has-password-label' for='has-password-yes'>
+              Yes, my password is:
+            </label>
+            <small id='password-helper-text' class='helper-text'>
+              Please enter your password.
+            </small>
+            <input id='log-in-password-field' type="password" class="span3 optional-field" onclick="selectHasPasswordYes()" onfocus="selectHasPasswordYes()"/>
+            <a id='forgot-password' href="#" class="">Forgot your password?</a>
+            <a id='go' class='button' href="#">Go</a>
+          </form>
+      </div>
+
+      <div id='push'><!--//--></div>
+
+    </div>
+
+    <footer>
+      <ul class='well'>
+        <li><a href="#">Features</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="mailto:gander@ripariandata.com">Email Us</a></li>
+        <li><a href="#">Privacy</a></li>
+      </ul>
+    </footer>
+
+    <script type="text/javascript">
+      function onLoadFunctions() {
+        scrollToLogo();
+      }
+      
+      function scrollToLogo() {
+        document.getElementById("slogan").scrollIntoView();
+      }
+      
+      function uncheckRadioButtons() {
+        document.getElementById("has-password-no").checked=false;
+        document.getElementById("has-password-yes").checked=false;
+      }
+      
+      function selectHasPasswordNo() {
+        document.getElementById("email-helper-text").classList.remove('error');
+        document.getElementById("password-helper-text").classList.remove('error');    
+        document.getElementById("go").innerHTML="Create an Account";
+        document.getElementById("log-in-password-field").classList.add("visibility-hidden");
+        document.getElementById("forgot-password").classList.add("visibility-hidden");
+      }
+
+      function selectHasPasswordYes() {
+        document.getElementById("go").innerHTML="Go";
+        document.getElementById("has-password-yes").checked=true;
+        document.getElementById("log-in-password-field").classList.remove("visibility-hidden");
+        document.getElementById("forgot-password").classList.remove("visibility-hidden");
+      }
+
+      document.getElementById('go').onclick = function() {
+        // Validate form
+        var error = false;
+        if (document.getElementById("has-password-yes").checked) {
+          if (document.getElementById("log-in-email-field").value == "") {
+            document.getElementById("email-helper-text").classList.add('error');
+            error = true;
+          } else {
+            document.getElementById("email-helper-text").classList.remove('error');
+          }
+          if (document.getElementById("log-in-password-field").value == "") {
+            document.getElementById("password-helper-text").classList.add('error');
+            error = true;
+          } else {
+            document.getElementById("password-helper-text").classList.remove('error');          
+          }
+        } 
+        if (!document.getElementById("has-password-yes").checked && 
+            !document.getElementById("has-password-no").checked) {
+          document.getElementById("radio-helper-text").classList.add('error');
+          error = true;
+        } else {
+          document.getElementById("radio-helper-text").classList.remove('error');
+        }
+          
+        if (error) {
+          return false;
+        }
+        
+        // Set Go button's href
+        if (document.getElementById("has-password-yes").checked) {
+          document.getElementById("go").href="../success-login.html";        
+        } else {
+          document.getElementById("go").href="create-account.html";
+        }
+        document.getElementById("go").href+=("?email="+document.getElementById("log-in-email-field").value);
+        return true;
+      };
+      
+    </script>
+   
+  </body>
+</html>
+

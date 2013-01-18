@@ -1,0 +1,432 @@
+.hidden {
+  display: none;
+}
+
+.container {
+  font-family: Arial, sans-serif;
+}
+
+.header-container {
+  width: 100%;
+  background-color: #DDD;
+  padding-bottom: 0px;
+  border-top: solid black 2px;
+  border-bottom: solid black 2px;
+}
+
+h2.folder-header-wrapper {
+  font-size: 1.8em;
+  font-family: Arial, sans-serif;  
+  display: block;
+  margin: 2px 0 0 0;
+  padding: 0;
+}
+
+a.folder-header {
+  color: black;
+}
+
+a.folder-header:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.folder-header-wrapper .arrow-icon {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -10px;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat; 
+  background-position: -311px -118px;
+  background-image: url("../images/glyphicons.png");   
+}
+
+.folder-header-wrapper .arrow-icon.flipped {
+  background-position: -287px -116px;
+}
+
+.button-ribbon-top {
+  display: relative;
+}
+
+.sync-button, .settings-button {
+  display: block;
+  width: 32px;
+  height: 32px;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 4px;
+  background-repeat: no-repeat;
+  margin: -36px 8px 8px 8px;
+}
+
+.sync-button:hover, .settings-button:hover, .folders-button:hover, .edit-button:hover {
+  cursor: pointer;
+}
+
+.folders-button, .edit-button {
+  display: block;
+  width: 50px;
+  height: 32px;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 4px;
+  background-repeat: no-repeat;
+  margin: -36px 8px 8px 8px;
+  position: relative;
+  padding-left: 4px;
+  padding-right: 4px;
+  font-size: 1.3em;
+  text-align: center;
+}
+
+.header-container .folders-button {
+  float: left;
+}
+
+.header-container .edit-button {
+  float: right;
+}
+
+.folders-button p, .edit-button p {
+  position: absolute;
+  top: 5px;
+  width: 50px;
+  text-align: center;
+}
+
+.header-container .sync-button {
+  float: left;
+  background-position: -231px -16px;
+  background-image: url("../images/glyphicons.png");
+}
+
+.header-container .settings-button {
+  float: right;
+  background-position: -423px 8px;
+  background-image: url("../images/glyphicons.png");
+}
+
+.search-field-cell {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.header-container .search-field {
+  display: block;
+  padding-left: 25px;
+  margin: 0 auto 6px auto;
+  border: 2px solid black;
+  border-radius: 4px;
+  width: 90%;
+  height: 22px;
+  font-size: 1.2em;
+  background-position: 5px 7px;
+  background-image: url("../images/search-icon.png");
+  background-repeat: no-repeat;
+}
+
+.message-list-container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 1.1em;
+}
+
+table.message-list {
+  margin: 0 auto 2em auto;
+  border-top: 1px solid #BBB;
+  width: 100%;
+  background-color: white;
+}
+
+.header-fix-toggle:hover {
+  cursor: pointer;
+}
+
+.message {
+  border-bottom: 1px solid #EEE;
+  width: 100%;
+  min-width: 24em;
+  height: 85px;
+  margin: 0;
+  padding: 0;
+}
+
+.message:hover {
+  cursor: pointer:
+}
+
+.message.edit-mode.selected {
+  background-color: #EEF;
+  border-bottom: 1px solid #CCC; /* increases border contrast */
+}
+
+.message .check-box-cell {
+  width: 36px;
+  padding: 0;
+  position: relative;
+}
+
+.message .check-box-cell.edit-mode {
+  width: 26px;
+}
+
+.check-box-cell .unread-marker {
+  visibility: hidden;
+  width: 32px;
+  height: 85px;
+  background-color: #CCCCFF;
+}
+
+.message.unread .check-box-cell .unread-marker {
+  visibility: visible;
+}
+
+.message .message-check-box {
+  position: absolute;
+  top: 32px;
+  left: 6px;
+  width: 16px;
+  height: 16px;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 4px;
+}
+
+.unread-marker-cell {
+  width: 20px;
+  height: auto;
+  position: relative;
+}
+
+.unread-marker-cell .unread-marker {
+  visibility: hidden;
+  position: absolute;
+  top: 36px;
+  width: 14px;
+  height: 20px;
+  margin-left: 3px;
+  background-image: url("../images/unread-icon.png");
+  background-position: 0px 0px;
+  background-repeat: no-repeat;
+}
+
+.message.unread .unread-marker-cell .unread-marker {
+  visibility: visible;
+}
+
+.message .message-check-box.selected {
+  background-position: -287px 0px;
+  background-image: url("../images/glyphicons.png");
+}
+
+a.message-link {
+  color: black;
+  text-decoration: none;
+}
+
+.message .message-preview-cell {
+  position: relative;
+}
+
+.message p {
+  display: block;
+  padding: 0;
+  margin: 0;
+  font-size: 1.1em;
+  height: 1.2em;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+.message p.from {
+  font-size: 1.3em;
+  float: left;
+  margin-top: -4px;
+  margin-right: 30px;
+}
+
+.message.unread p.from {
+  font-weight: bold;
+}
+
+.message p.date {
+  position: absolute;
+  top: 6px;
+  right: 12px;
+  color: #777;
+}
+
+.message p.subject {
+  clear: both;
+  position: relative;
+  bottom: 2px;
+  margin-right: 14px;
+}
+
+.message p.content {
+  height: 34px;
+  margin-top: -2px;
+  margin-right: 14px;
+  line-height: 120%;
+  color: #777;
+}
+
+.message.edit-mode p.content {
+  /*margin-right: 5px;*/
+}
+
+.message-list .right-arrow {
+  background-repeat: no-repeat;
+  background-position: -455px -72px;
+  width: 16px;
+  height: 16px;
+  background-image: url("../images/glyphicons.png");  
+  opacity: 0.4;
+  filter: alpha(opacity=40); /* For IE8 and earlier */
+  position: absolute;
+  right: 2px;
+  bottom: 35px;
+}
+
+.button-ribbon {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #CCC;
+  border-top: 2px solid black;
+}
+
+.button-list {
+  margin: 0;
+  padding: 0;
+}
+
+.button-list li {
+  list-style-type: none;
+  float: left;
+  text-align: center;
+  width: 60px;
+  border-right: 2px black solid;
+  position: relative;
+}
+
+.button-list li:last-child {
+  border-right: none;
+}
+
+.button-list li:hover {
+  cursor: pointer;
+  background-color: #EEE;
+}
+
+.button-list li p {
+  margin-top: 30px;
+  text-decoration: none;
+  overflow: hidden;
+  color: black;
+  font-size: 1em;
+  font-family: Arial, sans-serif;
+}
+
+.button-list .icon {
+  position: absolute;
+  bottom: 30px;
+  right: 22px;
+  width: 16px;
+  height: 16px;
+  background-image: url("../images/glyphicons.png");
+  background-repeat: no-repeat;
+}
+
+.button-list .cancel .icon {
+  background-position: -311px 0px;
+}
+
+.button-list .trash .icon {
+  background-position: -455px 0px;
+}
+
+.button-list .move .icon {
+  background-position: -407px -120px;
+}
+
+.button-list .mark .icon {
+  background-position: -94px -120px;
+}
+
+.button-list .more .icon {
+  background-position: -286px -96px;
+}
+
+.folder-list-container {
+  display: none;
+  width: 100%;
+  margin: 6px auto 0 auto;
+}
+
+.folder-list-container.show {
+  display: block;
+}
+
+.folder-list li span {
+  font: 18px/30px black Arial, sans-serif;
+}
+
+.folder-list li span:hover {
+  color: blue;
+  cursor: pointer;
+}
+
+.folder-list, .folder-list ol {
+  list-style-type: none;
+}
+
+.scroll-up-button {
+  width: 32px;
+  height: 48px;
+  border: 2px black solid;
+  border-bottom: none;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  position: fixed;
+  bottom: 0;
+  right: 8px;
+  background-image: url("../images/doublearrow-icon.png");
+  background-repeat: no-repeat;
+  background-position: 10px 10px;
+}
+
+.scroll-up-background {
+  width: 100%;
+  height: 100%;
+  background-color: #CCC;
+  opacity: 0.5;
+  filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+
+.scroll-up-icon {
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/doublearrow-icon.png");
+  background-repeat: no-repeat;
+  background-position: 10px 10px;
+}
+
+.scroll-up-background:hover {
+  cursor: pointer;
+}
+
+footer .well {
+  border-top: 2px solid black;
+  background-color: #DDD;
+  font-family: Arial, sans-serif;
+  border-radius: 0;
+}
+
+footer .well a:hover {
+  text-decoration: none;
+}

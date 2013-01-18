@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+    <title>Gander - Log In</title>
+   <link href='http://fonts.googleapis.com/css?family=Lato|Courgette' rel='stylesheet' type='text/css'>
+    <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="../css/main.css" rel="stylesheet" type="text/css" />
+    <script src="../scripts/jquery-1.7.2.min.js"></script>
+  </head>
+
+  <body>
+
+  <div id='container'>
+      <header>
+        <a href="index.html">
+          <img id='logo' src="../images/Gander-logo-sm.png" border="0" alt="Gander Logo"></img>
+        </a>
+        <a id='two-button-wrapper' href='log-in.html'>
+          <span id='two-button-small' class='button'>
+            <b>Already have an account?</b>
+          </span>
+        </a>
+      </header>
+
+      <h2 id="create-account-title">
+        Create an Account
+      </h2>
+
+      <div id='waitlist'>
+          <form class="well">
+            <label id='log-in-email-label'>
+              What is your work email address?
+            </label>
+            <small id='email-helper-text' class='helper-text'>
+              Please enter your email address.
+            </small>
+            <input id='log-in-email-field' type="email" class="span3" placeholder="email@company.com">
+            <label id='log-in-password-label'>
+              Create a new password for Gander
+            </label>
+            <small id='password-empty-helper-text' class='helper-text'>
+              Please enter a valid password.
+            </small>
+            <small id='password-match-helper-text' class='helper-text'>
+              Passwords do not match.
+            </small>
+            <input id='log-in-password-field' type="password" class="span3" placeholder="password">
+            <input id='log-in-password-confirmation-field' type="password" class="span3" placeholder="confirm password">
+            <label id='name-label'>
+              What is your name?
+            </label>
+            <input id='name-field' type="text" class="span3 optional-field" placeholder="optional">
+            <small id='privacy-helper-text' class='helper-text' style="margin-bottom:-1em;">
+              Accepting the Privacy Policy is required.
+            </small>
+            <input type="checkbox" class="checkbox" name="agree to privacy policy" id="privacy-policy-checkbox">
+            <label id='checkbox-label' for="privacy-policy-checkbox">
+              I have read and agree to the <a href="#">Privacy Policy</a>.
+            </label>
+
+            <a id='go' class='button' href="../success-signup.html">Create Account</a>
+            <a id='back-button-a-index' class='button' href="log-in.html">Already have an account?</a>
+          </form>
+      </div>
+
+      <div id='push'><!--//--></div>
+
+    </div>
+
+    <footer>
+      <ul class='well'>
+        <li><a href="#">Features</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="mailto:gander@ripariandata.com">Email Us</a></li>
+        <li><a href="#">Privacy</a></li>
+      </ul>
+    </footer>
+
+    <script type="text/javascript">
+      function onLoadFunctions() {
+        scrollToCreateAccountTitle();
+      }
+      
+      function scrollToCreateAccountTitle() {
+        document.getElementById("create-account-title").scrollIntoView();
+      }
+      
+      document.getElementById('go').onclick = function() {
+        var error = false;
+        if (document.getElementById("log-in-email-field").value == "") {
+          document.getElementById("email-helper-text").classList.add('error');
+          error = true;
+        } else {
+          document.getElementById("email-helper-text").classList.remove('error');
+        }
+        if (document.getElementById("log-in-password-field").value == "") {
+          document.getElementById("password-empty-helper-text").classList.add('error');
+          error = true;
+        } else {
+          document.getElementById("password-empty-helper-text").classList.remove('error');          
+        }        
+        if (document.getElementById("log-in-password-field").value != document.getElementById("log-in-password-confirmation-field").value) {
+          document.getElementById("password-match-helper-text").classList.add('error');
+          error = true;
+        } else {
+          document.getElementById("password-match-helper-text").classList.remove('error');          
+        }
+        if (!document.getElementById("privacy-policy-checkbox").checked) {
+          document.getElementById("privacy-helper-text").classList.add('error');
+          error = true;
+        } else {
+          document.getElementById("privacy-helper-text").classList.remove('error');          
+        }
+          
+        if (error) {
+          return false;
+        }
+        
+        return true;
+      };
+    </script>
+  </body>
+</html>
+

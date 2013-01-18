@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+    <title>Gander - Messages</title>
+    <link href='http://fonts.googleapis.com/css?family=Lato|Courgette' rel='stylesheet' type='text/css' />
+    <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="../css/main.css" rel="stylesheet" type="text/css" />
+    <link href="../css/inbox.css" rel="stylesheet" type="text/css" />
+    <link href="../css/search.css" rel="stylesheet" type="text/css" />
+    <script src="../scripts/jquery-1.7.2.min.js"></script>
+  </head>
+
+  <body onload="onLoadFunctions()">
+
+    <div id='container'>
+      <header>
+        <div class="logo"></div>
+        <div class="header-left-button"></div>
+        <div class="header-right-button"></div>
+      </header>
+      
+      <div class="search-field-wrapper">
+        <input class="search-field" id="main-search" type="text" placeholder='search all your messages'/>
+        <div class="search-button">
+          <div class="search-icon"></div>
+        </div>
+      </div>
+          
+      <div class='message-list-container'>
+        <table class='message-list'>
+          <tr class='message unread gander hidden' id='message1'>
+            <td class='check-box-cell'>
+              <div class="unread-marker"></div>
+              <div class="message-check-box"></div>
+            </td>
+            <td class='message-preview-cell'>
+              <a href="success-message.html" class="message-link">
+                <p class='from'>Gander</p>
+                <p class='date'>5:44pm</p>
+                <p class='subject'>Get started with Gander</p>
+                <p class='content'>Welcome! Start getting all your emails in Gander by entering your Exchange email and password. You should start seeing your emails appear right away! Questions? Email us: gander@ripariandata.com.</p>
+                <div class="right-arrow"></div>
+              </a>
+            </td>
+          </tr>
+          <tr class='message gander hidden' id='message2'>
+            <td class='check-box-cell'>
+              <div class="unread-marker"></div>
+              <div class="message-check-box"></div>
+            </td>
+            <td class='message-preview-cell'>
+              <a href="success-message.html" class="message-link">
+                <p class='from'>gander@ripariandata.com</p>
+                <p class='date'>August 3</p>
+                <p class='subject'>Gander Revolutionizes Email. Again.</p>
+                <p class='content'>Initial press releases suggest Gander will modernize the way we think of email for years to come. Studies show the average businessman spends upwards of 3 hours every day sifting through messages.</p>
+                <div class="right-arrow"></div>
+              </a>
+            </td>
+          </tr>
+          <tr class='message hidden' id='message3'>
+            <td class='check-box-cell'>
+              <div class="unread-marker"></div>
+              <div class="message-check-box"></div>
+            </td>
+            <td class='message-preview-cell'>
+              <a href="success-message.html" class="message-link">
+                <p class='from'>friend@gmail.com</p>
+                <p class='date'>March 12</p>
+                <p class='subject'>Wanna grab lunch?</p>
+                <p class='content'>I heard there is a new sushi restaurant in Watertown Square. Their ratings are sky-high. Are you free at 12:30pm? We can walk to the Green Line then get off at Kenmore Square. </p>
+                <div class="right-arrow"></div>
+              </a>
+            </td>
+          </tr>
+          <tr class='message unread hidden' id='message4'>
+            <td class='check-box-cell'>
+              <div class="unread-marker"></div>
+              <div class="message-check-box"></div>
+            </td>
+            <td class='message-preview-cell'>
+              <a href="success-message.html" class="message-link">
+                <p class='from'>no-reply@ecards.com</p>
+                <p class='date'>4/18/11</p>
+                <p class='subject'>Happy birthday!</p>
+                <p class='content'>Click below to open your birthday e-card from your brother. Best wishes for a great day! Want to automate birthday cards for all your friends and family? You'll never have to remember anyone's birthday again!</p>
+                <div class="right-arrow"></div>
+              </a>
+            </td>
+          </tr>
+          <tr class='message hidden' id='message5'>
+            <td class='check-box-cell'>
+              <div class="unread-marker"></div>
+              <div class="message-check-box"></div>
+            </td>
+            <td class='message-preview-cell'>
+              <a href="success-message.html" class="message-link">
+                <p class='from'>Gander</p>
+                <p class='date'>Yesterday</p>
+                <p class='subject'>Gander is the bomb.</p>
+                <p class='content'>Check out everything Gander can do. Scroll down and click the features tab, or browse our blog. Reading the Privacy Policy can be pretty exciting, too.</p>
+                <div class="right-arrow"></div>
+              </a>
+            </td>
+          </tr>
+          <tr class='message unread tamar hidden' id='message6'>
+            <td class='check-box-cell'>
+              <div class="unread-marker"></div>
+              <div class="message-check-box"></div>
+            </td>
+            <td class='message-preview-cell'>
+              <a href="success-message.html" class="message-link">
+                <p class='from'>tamarr@ripariandata.com</p>
+                <p class='date'>September 2</p>
+                <p class='subject'>And the Snapple fact is...</p>
+                <p class='content'>A star? That's the Snapple fact?! I've gone online to claim my price, and let me tell you, it's a scam. </p>
+                <div class="right-arrow"></div>
+              </a>
+            </td>
+          </tr>
+          <tr class='message unread scott hidden' id='message7'>
+            <td class='check-box-cell'>
+              <div class="unread-marker"></div>
+              <div class="message-check-box"></div>
+            </td>
+            <td class='message-preview-cell'>
+              <a href="success-message.html" class="message-link">
+                <p class='from'>scottd@ripariandata.com</p>
+                <p class='date'>6:30am</p>
+                <p class='subject'>Blog post #731</p>
+                <p class='content'>Dried mission figs are a bit smaller and sweeter than the Calimyrna variety. These also have a slight pinkish hue in the middle. See http://nuts.com/driedfruit/figs/mission.html.</p>
+                <div class="right-arrow"></div>
+              </a>
+            </td>
+          </tr>
+          <tr class='message unread sean hidden' id='message8'>
+            <td class='check-box-cell'>
+              <div class="unread-marker"></div>
+              <div class="message-check-box"></div>
+            </td>
+            <td class='message-preview-cell'>
+              <a href="success-message.html" class="message-link">
+                <p class='from'>seank@ripariandata.com</p>
+                <p class='date'>3/2/10</p>
+                <p class='subject'>Orchid - Build #849 - Fixed!</p>
+                <p class='content'>Alaskan snowmobilers apply duct tape to their faces to keep them from freezing during the Iron Dog 2200 mile race. The Apollo 13 crew used duct tape in 1970 to retrofit square carbon dioxide filters into round lunar module receptacles, which saved three astronauts' lives.</p>
+                <div class="right-arrow"></div>
+              </a>
+            </td>
+          </tr>
+          <tr class='message unread ramon hidden' id='message9'>
+            <td class='check-box-cell'>
+              <div class="unread-marker"></div>
+              <div class="message-check-box"></div>
+            </td>
+            <td class='message-preview-cell'>
+              <a href="success-message.html" class="message-link">
+                <p class='from'>ramona@softartisans.com</p>
+                <p class='date'>July 16</p>
+                <p class='subject'>ultimate tomorrow</p>
+                <p class='content'>Just a reminder to those of you who expressed interest, that we will be playing Ultimate Frisbee tomorrow after work.</p>
+                <div class="right-arrow"></div>
+              </a>
+            </td>
+          </tr>
+          <tr class='message unread david hidden' id='message10'>
+            <td class='check-box-cell'>
+              <div class="unread-marker"></div>
+              <div class="message-check-box"></div>
+            </td>
+            <td class='message-preview-cell'>
+              <a href="success-message.html" class="message-link">
+                <p class='from'>wihl@ripariandata.com</p>
+                <p class='date'>3/2/10</p>
+                <p class='subject'>Gander as a metaphor for life</p>
+                <p class='content'>"When life gives you an orchid, let it blossom."</p>
+                <div class="right-arrow"></div>
+              </a>
+            </td>
+          </tr>
+          <tr class='message unread mike hidden' id='message11'>
+            <td class='check-box-cell'>
+              <div class="unread-marker"></div>
+              <div class="message-check-box"></div>
+            </td>
+            <td class='message-preview-cell'>
+              <a href="success-message.html" class="message-link">
+                <p class='from'>michaelf@ripariandata.com</p>
+                <p class='date'>3:12pm</p>
+                <p class='subject'>Quality Assured.</p>
+                <p class='content'>I ran through some manual tests, and looks like we've eliminated just about every bug. Good work team! </p>
+                <div class="right-arrow"></div>
+              </a>
+            </td>
+          </tr>
+          <tr class='message unread nick hidden' id='message11'>
+            <td class='check-box-cell'>
+              <div class="unread-marker"></div>
+              <div class="message-check-box"></div>
+            </td>
+            <td class='message-preview-cell'>
+              <a href="success-message.html" class="message-link">
+                <p class='from'>nickm@ripariandata.com</p>
+                <p class='date'>4:11pm</p>
+                <p class='subject'>HTTP party!</p>
+                <p class='content'>Well this is kind of like partying...</p>
+                <div class="right-arrow"></div>
+              </a>
+            </td>
+          </tr>
+          <tr class='message unread christina hidden' id='message11'>
+            <td class='check-box-cell'>
+              <div class="unread-marker"></div>
+              <div class="message-check-box"></div>
+            </td>
+            <td class='message-preview-cell'>
+              <a href="success-message.html" class="message-link">
+                <p class='from'>christinan@ripariandata.com</p>
+                <p class='date'>9:11pm</p>
+                <p class='subject'>here are the mock-ups :)</p>
+                <p class='content'>I added some dancing ganders in the background to spice things up. they should liven the user interface and make the UX really crisp. Hope you like them! </p>
+                <div class="right-arrow"></div>
+              </a>
+            </td>
+          </tr>
+          <tr class='message unread jim hidden' id='message11'>
+            <td class='check-box-cell'>
+              <div class="unread-marker"></div>
+              <div class="message-check-box"></div>
+            </td>
+            <td class='message-preview-cell'>
+              <a href="success-message.html" class="message-link">
+                <p class='from'>jims@ripariandata.com</p>
+                <p class='date'>3:12pm</p>
+                <p class='subject'>iPod synced and ready to go</p>
+                <p class='content'>The iPod OS couldn't be updated at work, so I took it home and spent the night doing it for you. Should be working 100%.</p>
+                <div class="right-arrow"></div>
+              </a>
+            </td>
+          </tr>
+        </table>
+        
+        <div class="button-ribbon hidden">
+          <ul class="button-list">
+            <li class="cancel">
+              <p>cancel</p>
+              <div class="icon"></div>
+            </li>
+            <li class="trash">
+              <p>trash</p>
+              <div class="icon"></div>
+            </li>
+            <li class="move">
+              <p>move</p>
+              <div class="icon">
+              </div>
+            </li>
+            <li class="mark">
+              <p>mark</p>
+              <div class="icon"></div>
+            </li>
+            <li class="more">
+              <p>more</p>
+              <div class="icon"></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="scroll-up-button hidden">
+        <div class="scroll-up-background"></div>
+      </div>
+      
+      <div id='push'><!--//--></div>
+      
+    </div>
+    
+    <footer>
+      <ul class='well'>
+        <li><a href="#">Features</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="mailto:gander@ripariandata.com">Email Us</a></li>
+        <li><a href="#">Privacy</a></li>
+      </ul>
+    </footer>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+        var numSelected = 0;
+        var window_width = $(window).width();
+        var button_width = (window_width-8)/5;
+        
+        var searchWidth = function() {
+          var window_width = $(window).width();
+          var search_width = window_width - 76 - 30;
+          return (search_width < 350) ? search_width : 350;
+        }
+        
+        $(".search-field").width(searchWidth());
+        $(".button-list li").width(button_width);
+        $(".button-list .icon").css("right", (button_width/2)-8);
+        
+        $(window).resize(function() {
+          var window_width = $(window).width();
+          var button_width = (window_width-8)/5;
+          $(".search-field").width(searchWidth());
+          $(".button-list li").width(button_width);
+          $(".button-list .icon").css("right", (button_width/2)-8);
+        });
+        
+        $("td.check-box-cell").click(function() {
+          $(this).find(".message-check-box").toggleClass("selected");
+          $(this).parent().toggleClass("selected");
+          
+          if ($(this).find(".message-check-box").hasClass("selected")) {
+            numSelected++;
+          } else {
+            numSelected--;
+          }
+          
+          if (numSelected > 0) {
+            $(".button-ribbon").removeClass("hidden");
+            $(".scroll-up-button").addClass("hidden");
+          } else {
+            $(".button-ribbon").addClass("hidden");
+          }
+        });
+              
+        $(".message-preview-cell a").click(function() {
+          $(this).parent().parent().removeClass("unread");
+          var href = $(this).attr("href");
+          var id = $(this).parent().parent().attr("id");
+          $(this).attr("href", href + "?" + id + "=unread");
+        });
+        
+        $(".cancel").click(function() {
+          $(".message-check-box").removeClass("selected");
+          $(".button-ribbon").addClass("hidden");
+          numSelected = 0;
+        });
+
+        $(".trash").click(function() {
+          $(".message-check-box").each(function() {
+            if ($(this).hasClass("selected")) {
+              $(this).removeClass("selected");
+              $(this).parent().parent().remove();            
+            }
+          });
+          $(".button-ribbon").addClass("hidden");
+          numSelected = 0;
+        });
+        
+        $(".move").click(function() {
+          alert("Now you would choose a folder.");
+          $(".message-check-box").each(function() {
+            if ($(this).hasClass("selected")) {
+              $(this).removeClass("selected");
+              $(this).parent().parent().remove();            
+            }
+          });
+          $(".button-ribbon").addClass("hidden");
+          numSelected = 0;
+        });
+        
+        $(".mark").click(function() {
+          $(".message-check-box").each(function() {
+            if ($(this).hasClass("selected")) {
+              $(this).parent().parent().toggleClass("unread");            
+              $(this).removeClass("selected");
+            }
+          });
+          $(".button-ribbon").addClass("hidden");
+          numSelected = 0;
+        });
+        
+        $(".more").click(function() {
+          $(".message-check-box").removeClass("selected");
+          alert("Sorry, there aren't any more options yet.");
+          $(".button-ribbon").addClass("hidden");
+          numSelected = 0;
+        });
+
+        
+        $(".search-button").click(function() {
+          $(".message").addClass("hidden");
+          var search = $(".search-field").val();
+          if (search == "" || search == "all" || search == "everything" || search == "show me da money") {
+            $(".message").removeClass("hidden");
+          } else {
+            $(".message." + search).removeClass("hidden");            
+          } 
+        });
+
+        $(".scroll-up-button").click(function() {
+          $('html,body').animate({scrollTop:0}, "fast");    
+          /* window.scrollTo(0, 0); use this for iPhones--less jerky */
+        });
+        
+        $(window).scroll(function() {
+           if (window.pageYOffset == 0 || numSelected > 0) {
+            $(".scroll-up-button").addClass("hidden");
+           } else {
+            $(".scroll-up-button").removeClass("hidden");
+          }
+        });
+      });
+    </script>
+
+    <script type="text/javascript">
+      function onLoadFunctions() {
+        setUnreadMessages();
+        scrollToLogo();
+      }
+      
+      function scrollToLogo() {
+        document.getElementById("container").scrollIntoView();
+      }
+
+      function setUnreadMessages() {
+        var qs = getQueryStrings();
+        for (var i = 1; i <= 10; i++) {
+          if (qs["message" + i] == "unread") {
+            document.getElementById("message" + i).classList.remove("unread");
+          } else if (qs["message" + i] == "read") {
+            document.getElementById("message" + i).classList.add("unread");
+          }
+        }
+      }
+      
+      function getQueryStrings() {
+        var assoc  = {};
+        var decode = function (s) { return decodeURIComponent(s.replace(/\+/g, " ")); };
+        var queryString = location.search.substring(1); 
+        var keyValues = queryString.split('&'); 
+
+        for(var i in keyValues) { 
+          var key = keyValues[i].split('=');
+          if (key.length > 1) {
+            assoc[decode(key[0])] = decode(key[1]);
+          }
+        } 
+
+        return assoc; 
+      } 
+    </script>
+   
+  </body>
+</html>
+

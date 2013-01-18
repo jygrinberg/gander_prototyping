@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+    <title>Gander - Sign In</title>
+   <link href='http://fonts.googleapis.com/css?family=Lato|Courgette' rel='stylesheet' type='text/css'>
+    <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="../css/main.css" rel="stylesheet" type="text/css" />
+    <script src="../scripts/jquery-1.7.2.min.js"></script>
+  </head>
+
+  <body>
+
+  <div id='container'>
+      <header>
+        <a href="index.html">
+          <img id='logo' src="../images/Gander-logo-sm.png" border="0" alt="Gander Logo"></img>
+        </a>
+      </header>
+
+      <h2>
+        Get your emails
+      </h2>
+
+      <div id='waitlist'>
+          <form class="well">
+            <label id='server-label'>
+              Server
+            </label>
+            <input id='server-field' type="text" class="span3"/>
+            <label id='domain-label'>
+              Domain
+            </label>
+            <input id='domain-field' type="text" class="span3"/>
+            <label id='log-in-email-label'>
+              What is your work email address?
+              <small id='small-helper-text' class='helper-text'>
+                Please enter your email address to sign in.
+              </small>
+            </label>
+            <input id='log-in-email-field' type="email" class="span3" placeholder="email@company.com"/>
+            <label id='log-in-email-label'>
+              What is your password?
+            </label>
+            <input id='log-in-password-field' type="password" class="span3 optional-field" placeholder="email password"/>
+
+            <a id='go' class='button' href="#">Get email</a>
+          </form>
+      </div>
+
+      <div id='push'><!--//--></div>
+
+    </div>
+
+    <footer>
+      <ul class='well'>
+        <li><a href="#">Features</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="mailto:gander@ripariandata.com">Email Us</a></li>
+        <li><a href="#">Privacy</a></li>
+      </ul>
+    </footer>
+
+    <script src="../scripts/verify.js"></script>
+    <script type="text/javascript">
+
+      function selectHasPasswordNo() {
+        document.getElementById("go").innerHTML="Create an Account";
+        document.getElementById("go").href="create-account.html"; // TODO: need to validate form first!
+        document.getElementById("log-in-password-field").value="";
+      }
+
+      function selectHasPasswordYes() {
+        document.getElementById("go").innerHTML="Go";
+        document.getElementById("go").href="../success-login.html"; // TODO: need to validate form first!
+        document.getElementById("has-password-yes").checked=true;
+      }
+
+      function validateSignIn() {
+        var emailField = document.getElementById("log-in-email-field");
+        var passwordField = document.getElementById("log-in-password-field");
+        if (emailField.value == "") {
+          document.getElementById("small-helper-text").addClass("error");
+        }
+        document.getElementById("go").href="#";
+      }
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+    <title>Gander - Success</title>
+   <link href='http://fonts.googleapis.com/css?family=Lato|Courgette' rel='stylesheet' type='text/css'>    
+    <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="../css/main.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body onload="onLoadFunctions()">
+
+  <div id='container'>
+      <header>
+        <a href="../A/index.html">
+          <img id='logo' src="../images/Gander-logo-sm.png" border="0" alt="Gander Logo"></img>
+        </a>
+      </header>
+
+      <h2>
+        Here's your message
+      </h2>
+
+      <div id='description'>    
+        <p id='thank-you'>
+          Thank you for testing Gander!
+        </p>
+        </br>
+        </br>
+        </br>
+        <a id='go' class='button' href="inbox.html">Back to messages</a>
+      </div>
+
+      <div id='push'><!--//--></div>
+
+    </div>
+
+    <footer>
+      <ul class='well'>
+        <li><a href="#">Features</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="mailto:gander@ripariandata.com">Email Us</a></li>
+        <li><a href="#">Privacy</a></li>
+      </ul>
+    </footer>
+    
+    <script type="text/javascript">
+      function onLoadFunctions() {
+        setBackButton();
+      }
+
+      function setBackButton() {
+        var qs = getQueryStrings();
+        var messageid = qs["message_id"];
+        document.getElementById("go").href += ("?message_id=" + messageid);
+      }
+      
+      function getQueryStrings() {
+        var assoc  = {};
+        var decode = function (s) { return decodeURIComponent(s.replace(/\+/g, " ")); };
+        var queryString = location.search.substring(1); 
+        var keyValues = queryString.split('&'); 
+
+        for(var i in keyValues) { 
+          var key = keyValues[i].split('=');
+          if (key.length > 1) {
+            assoc[decode(key[0])] = decode(key[1]);
+          }
+        } 
+
+        return assoc; 
+      } 
+    </script>
+  </body>
+</html>

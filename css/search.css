@@ -1,0 +1,99 @@
+header {
+  position: relative;
+  padding-left: 0;
+  padding-right: 0;
+  height: 2.5em;
+  width: 100%;
+  background-color: #333;
+  text-align: center;
+}
+
+header .header-left-button {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  color: white;
+  background-repeat: no-repeat; 
+  background-position: 0px 0px;
+  background-image: url("../images/checkmark-icon.png");   
+  background-size: 30px auto;
+  width: 30px;
+  height: 30px;
+}
+
+header .logo {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0px auto;
+  font-family: Commic Sans, sans-serif;
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #CCC;
+  background-repeat: no-repeat; 
+  background-position: 0px -3px;
+  background-image: url("../images/gander-icon.png");  
+  width: 100px;
+  height: 30px;
+}
+
+header .header-right-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  margin: 0px;
+  color: white;
+  background-repeat: no-repeat; 
+  background-position: 0px 0px;
+  background-image: url("../images/settings-icon.png");   
+  background-size: 30px auto;
+  width: 30px;
+  height: 30px;
+}
+
+.search-field-wrapper {
+  margin: 18px 0px;
+  width: 100%;
+}
+
+#main-search {
+  float: left;
+  display: inline-block;
+  margin: 0 6px;
+  vertical-align: middle;
+  height: 22px;
+  border: 2px solid black;
+  border-radius: 2px;
+  font-size: 1.1em;
+}
+
+.search-button {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  vertical-align: middle;
+  width: 72px;
+  height: 30px;
+  background-color: #DDD;
+  border: 2px solid black;
+  border-radius: 2px;
+}
+
+.search-button:hover {
+  cursor: pointer;
+  background-color: #EEE;
+}
+
+.search-button:active {
+  background-color: #FFF;
+}
+
+.search-icon {
+  position: absolute;
+  top: 7px;
+  left: 28px;
+  width: 16px;
+  height: 16px;
+  background-position: -48px 0px;
+  background-image: url("../images/glyphicons.png");
+  background-repeat: no-repeat;
+}

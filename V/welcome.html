@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+    <title>Gander - Welcome</title>
+   <link href='http://fonts.googleapis.com/css?family=Lato|Courgette' rel='stylesheet' type='text/css'>
+    <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="../css/main.css" rel="stylesheet" type="text/css" />
+    <script src="../scripts/jquery-1.7.2.min.js"></script>
+  </head>
+
+  <body>
+
+  <div id='container'>
+      <header>
+        <img id='logo' src="../images/Gander-logo-sm.png" border="0" alt="Gander Logo"></img>
+      </header>
+
+      <h2>
+        Welcome Aboard!
+      </h2>
+
+      <div id='waitlist'>
+          <form class="well">
+            <h3 class='form-section-header'>
+              Connect your Email Account
+              <small style='line-height: 1em;'>
+                Connect your existing Outlook/Microsoft Exchange Account to Gander so you can read your email 
+              </small>
+            </h3> 
+            <a id='show-screenshots' class='bottom-marker' style='display: none;' href="#">Show me how to find this information &gt;&gt;</a>
+            <a class='hide-screenshots top-marker' style='display: none;' href="#">Hide Screenshots &lt;&lt;</a>
+            <img id='walkthrough' src="../images/Screenshots.png" alt="Walkthrough"></img>
+            <a class='hide-screenshots bottom-marker' style='display: none;' href="#">Hide Screenshots &lt;&lt;</a>
+            <label id='mail-label'>Email</label>
+            <input type="email" class="span3" placeholder="email@company.com">
+            <label id='mail-label'>Username</label>
+            <input type="text" class="span3" placeholder="your username">
+            <label id='mail-label'>Password</label>
+            <input type="password" class="span3" placeholder="your password">
+            <label id='mail-label'>Server</label>
+            <input type="url" class="span3" placeholder="server.company.com">
+            <label id='mail-label'>Domain</label>
+            <input type="text" class="span3" placeholder="your domain">
+            <a id='sign-up' class='button' href="../success-signup.html">Get My Email</a>
+            <a class='abort' href="#">Get my email later</a>
+          </form>
+      </div>
+
+      <div id='push'><!--//--></div>
+
+    </div>
+
+    <footer>
+      <ul class='well'>
+        <li><a href="#">Features</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="mailto:gander@ripariandata.com">Email Us</a></li>
+        <li><a href="#">Privacy</a></li>
+      </ul>
+    </footer>
+  <script src="../scripts/verify.js"></script>
+
+  <script>
+
+    //Finds y value of given object
+    function findPos(obj) {
+            var curtop = 0;
+            if (obj.offsetParent) {
+                    do {
+                            curtop += obj.offsetTop;
+                    } while (obj = obj.offsetParent);
+            return [curtop];
+            }
+    }
+
+    function scrollWin(y){
+      window.scroll(0, y);
+      /*$('html,body').animate({
+        scrollTop: y//$("#show-screenshots").offset().top + y
+      }, 1); */
+    }
+
+    document.getElementById('show-screenshots').style.display = '';
+    document.getElementById('walkthrough').style.display = 'none';
+    var hidden = document.getElementsByClassName('hide-screenshots');
+    var hideScreenshotLinkDisplay = function (dispStyle) {
+      for (i=0; i<hidden.length; i++)
+      {
+        hidden[i].style.display = dispStyle;
+      }
+    }
+    hideScreenshotLinkDisplay('none');
+    document.getElementById('show-screenshots').onclick = function () {
+         //document.getElementById('walkthrough').style.display = '';
+
+        var y = window.scrollY;
+         this.style.display = 'none';
+         hideScreenshotLinkDisplay('');
+         $('#walkthrough').show(500, function() {scrollWin(y);});
+      };
+    for (i=0; i<hidden.length; i++) {
+      hidden[i].onclick = function (e) {
+        var y = window.scrollY;
+        //document.getElementById('walkthrough').style.display = 'none';
+        document.getElementById('show-screenshots').style.display = '';
+        hideScreenshotLinkDisplay('none');
+         $('#walkthrough').hide(500, function() {scrollWin(y);});
+
+        //var SupportDiv = document.getElementById('show-screenshots');
+        //window.scroll(0,findPos(SupportDiv));
+      }
+    }
+
+  </script>
+
+  </body>
+</html>
