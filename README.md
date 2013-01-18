@@ -9,11 +9,11 @@ Description
 ------------
 Each user test is contained within a separate folder at the root level and contains an `index.html` 
 file that serves as its root. Access the 5 prototypes at:
-* A: [www.ripariandata.github.com/Gander/index/A](www.ripariandata.github.com/Gander/index/A)
-* B: [www.ripariandata.github.com/Gander/index/A](www.ripariandata.github.com/Gander/index/A)
-
-For example, the start page for test A can be found at `/A/index.html` and
-it can be accessed at [ripariandata.github.com/Gander/index/A](ripariandata.github.com/Gander/index/A)
+* A: [ripariandata.github.com/Gander/index/A](www.ripariandata.github.com/Gander/index/A)
+* B: [ripariandata.github.com/Gander/index/A](www.ripariandata.github.com/Gander/index/A)
+* C: [ripariandata.github.com/Gander/index/A](www.ripariandata.github.com/Gander/inbox/A)
+* D: [ripariandata.github.com/Gander/index/A](www.ripariandata.github.com/Gander/inbox/A)
+* E: [ripariandata.github.com/Gander/index/A](www.ripariandata.github
 
 Unlike most repositories on GitHub, the default branch is not master; it is gh-pages. 
 Any changes pushed to GitHub will automatically be available at [ripariandata.github.com/Gander](ripariandata.github.com/Gander)
