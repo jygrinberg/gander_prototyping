@@ -1,4 +1,4 @@
-GanderPrototyping
+Gander Prototyping
 ======
 
 User testing prototypes for Gander, a secure, mobile-friendly way to access and search Microsoft Exchange email. 
